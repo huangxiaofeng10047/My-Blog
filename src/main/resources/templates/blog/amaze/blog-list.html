@@ -10,14 +10,6 @@
                             <div class="topic-header">
                                 <div class="pull-left">
                                     <div class="blog-flex-center">
-                                        <div class="blog-flex0">
-                                            <img th:src="@{${configurations.get('yourAvatar')}}" alt=""
-                                                 class="link avatar avatar-image">
-                                        </div>
-                                        <div class="author-lockup blog-flex1">
-                                            <a class="link" href="javascript:;"
-                                               th:text="${configurations.get('yourName')}">13</a>
-                                            <span class="in">in</span>
                                             <span class="category-name">
                                 <a class="category-name" rel="tag" th:href="@{'/category/' + ${blog.blogCategoryName}}"
                                    th:utext="${blog.blogCategoryName}">
@@ -35,7 +27,7 @@
                             </h1>
                             <div class="post-content-preview article-body">
                                 <a th:href="@{'/blog/' + ${blog.blogId}}">
-                                    <img th:src="@{${blog.blogCoverImage}}" alt=""></a>
+<!--                                    <img th:src="@{${blog.blogCoverImage}}" alt="">--></a>
                             </div>
                             <div class="clearfix topic-footer">
                                 <span class="pull-left time mobile_time">2018-01</span>

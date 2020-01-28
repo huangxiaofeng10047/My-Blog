@@ -28,6 +28,16 @@ public class BlogDetailVO {
 
     private Date createTime;
 
+    public String getReadCount() {
+        return readCount;
+    }
+
+    public void setReadCount(String readCount) {
+        this.readCount = readCount;
+    }
+
+    private String readCount;
+
     public Long getBlogId() {
         return blogId;
     }
@@ -123,4 +133,5 @@ public class BlogDetailVO {
     public void setBlogCoverImage(String blogCoverImage) {
         this.blogCoverImage = blogCoverImage;
     }
+
 }

@@ -5,6 +5,7 @@ import com.site.blog.my.core.entity.BlogComment;
 import com.site.blog.my.core.entity.BlogLink;
 import com.site.blog.my.core.service.*;
 import com.site.blog.my.core.util.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
@@ -25,8 +26,8 @@ import java.util.Map;
 public class MyBlogController {
 
     //public static String theme = "default";
-    //public static String theme = "yummy-jekyll";
-    public static String theme = "amaze";
+    public static String theme = "yummy-jekyll";
+    //public static String theme = "amaze";
     @Resource
     private BlogService blogService;
     @Resource
@@ -39,6 +40,9 @@ public class MyBlogController {
     private ConfigService configService;
     @Resource
     private CategoryService categoryService;
+    @Autowired
+    private RedisService redisService;
+
 
     /**
      * 首页
@@ -92,12 +96,24 @@ public class MyBlogController {
     @GetMapping({"/blog/{blogId}", "/article/{blogId}"})
     public String detail(HttpServletRequest request, @PathVariable("blogId") Long blogId, @RequestParam(value = "commentPage", required = false, defaultValue = "1") Integer commentPage) {
         BlogDetailVO blogDetailVO = blogService.getBlogDetail(blogId);
+        String readCount = redisService.get(blogId.toString());
+        if (StringUtils.isEmpty(readCount)) {
+
+
+            redisService.set(blogId.toString(),"1");
+            readCount = "1";
+        } else {
+            readCount = redisService.incr(blogId.toString());
+        }
+        blogDetailVO.setReadCount(readCount);
         if (blogDetailVO != null) {
             request.setAttribute("blogDetailVO", blogDetailVO);
+
             request.setAttribute("commentPageResult", commentService.getCommentPageByBlogIdAndPageNum(blogId, commentPage));
         }
         request.setAttribute("pageName", "详情");
         request.setAttribute("configurations", configService.getAllConfigs());
+
         return "blog/" + theme + "/detail";
     }
 

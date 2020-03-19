@@ -36,7 +36,7 @@ public class AdminController {
 
     @GetMapping({"/login"})
     public String login() {
-        return "admin/login";
+        return "admin-new/login";
     }
 
     @GetMapping({"/test"})
@@ -45,6 +45,17 @@ public class AdminController {
     }
 
 
+    //@GetMapping({"", "/", "/index", "/index.html"})
+    //public String index(HttpServletRequest request) {
+    //    request.setAttribute("path", "index");
+    //    request.setAttribute("categoryCount", categoryService.getTotalCategories());
+    //    request.setAttribute("blogCount", blogService.getTotalBlogs());
+    //    request.setAttribute("linkCount", linkService.getTotalLinks());
+    //    request.setAttribute("tagCount", tagService.getTotalTags());
+    //    request.setAttribute("commentCount", commentService.getTotalComments());
+    //    request.setAttribute("path", "index");
+    //    return "admin/index";
+    //}
     @GetMapping({"", "/", "/index", "/index.html"})
     public String index(HttpServletRequest request) {
         request.setAttribute("path", "index");
@@ -54,7 +65,7 @@ public class AdminController {
         request.setAttribute("tagCount", tagService.getTotalTags());
         request.setAttribute("commentCount", commentService.getTotalComments());
         request.setAttribute("path", "index");
-        return "admin/index";
+        return "admin-new/index";
     }
 
     @PostMapping(value = "/login")
@@ -81,7 +92,7 @@ public class AdminController {
             session.setAttribute("loginUserId", adminUser.getAdminUserId());
             //session过期时间设置为7200秒 即两小时
             //session.setMaxInactiveInterval(60 * 60 * 2);
-            return "redirect:/admin/index";
+            return "redirect:/admin-new/index";
         } else {
             session.setAttribute("errorMsg", "登陆失败");
             return "admin/login";

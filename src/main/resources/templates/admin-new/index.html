@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="zh">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 <title>首页 - 光年(Light Year Admin)后台管理系统模板</title>
-<link rel="icon" href="favicon.ico" type="image/ico">
+<link rel="icon" href="../../static/admin-new/dist/images/favicon.ico" type="image/ico">
 <meta name="keywords" content="LightYear,光年,后台模板,后台管理系统,光年HTML模板">
 <meta name="description" content="LightYear是一个基于Bootstrap v3.3.7的后台管理系统的HTML模板。">
 <meta name="author" content="yinqi">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/materialdesignicons.min.css" rel="stylesheet">
-<link href="css/style.min.css" rel="stylesheet">
+  <link th:href="@{/admin-new/dist/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/admin-new/dist/css/materialdesignicons.min.css}" rel="stylesheet">
+  <link th:href="@{/admin-new/dist/css/style.min.css}" rel="stylesheet">
 </head>
   
 <body>
@@ -21,92 +22,14 @@
       
       <!-- logo -->
       <div id="logo" class="sidebar-header">
-        <a href="index.html"><img src="images/logo-sidebar.png" title="LightYear" alt="LightYear" /></a>
+        <a href="index.html"><img th:src="@{/admin-new/dist/images/logo-sidebar.png}" title="LightYear" alt="LightYear" /></a>
       </div>
-      <div class="lyear-layout-sidebar-scroll"> 
+      <div class="lyear-layout-sidebar-scroll">
+        <!-- 引入工具栏sidebar-fragment -->
+        <div th:replace="admin/sidebar::sidebar-fragment(${path})"></div>
+
         
-        <nav class="sidebar-main">
-          <ul class="nav nav-drawer">
-            <li class="nav-item active"> <a href="index.html"><i class="mdi mdi-home"></i> 后台首页</a> </li>
-            <li class="nav-item nav-item-has-subnav">
-              <a href="javascript:void(0)"><i class="mdi mdi-palette"></i> UI 元素</a>
-              <ul class="nav nav-subnav">
-                <li> <a href="lyear_ui_buttons.html">按钮</a> </li>
-                <li> <a href="lyear_ui_cards.html">卡片</a> </li>
-                <li> <a href="lyear_ui_grid.html">格栅</a> </li>
-                <li> <a href="lyear_ui_icons.html">图标</a> </li>
-                <li> <a href="lyear_ui_tables.html">表格</a> </li>
-                <li> <a href="lyear_ui_modals.html">模态框</a> </li>
-                <li> <a href="lyear_ui_tooltips_popover.html">提示 / 弹出框</a> </li>
-                <li> <a href="lyear_ui_alerts.html">警告框</a> </li>
-                <li> <a href="lyear_ui_pagination.html">分页</a> </li>
-                <li> <a href="lyear_ui_progress.html">进度条</a> </li>
-                <li> <a href="lyear_ui_tabs.html">标签页</a> </li>
-                <li> <a href="lyear_ui_typography.html">排版</a> </li>
-                <li> <a href="lyear_ui_step.html">步骤</a> </li>
-                <li> <a href="lyear_ui_other.html">其他</a> </li>
-              </ul>
-            </li>
-            <li class="nav-item nav-item-has-subnav">
-              <a href="javascript:void(0)"><i class="mdi mdi-format-align-justify"></i> 表单</a>
-              <ul class="nav nav-subnav">
-                <li> <a href="lyear_forms_elements.html">基本元素</a> </li>
-                <li> <a href="lyear_forms_radio.html">单选框</a> </li>
-                <li> <a href="lyear_forms_checkbox.html">复选框</a> </li>
-                <li> <a href="lyear_forms_switch.html">开关</a> </li>
-              </ul>
-            </li>
-            <li class="nav-item nav-item-has-subnav">
-              <a href="javascript:void(0)"><i class="mdi mdi-file-outline"></i> 示例页面</a>
-              <ul class="nav nav-subnav">
-                <li> <a href="lyear_pages_doc.html">文档列表</a> </li>
-                <li> <a href="lyear_pages_gallery.html">图库列表</a> </li>
-                <li> <a href="lyear_pages_config.html">网站配置</a> </li>
-                <li> <a href="lyear_pages_rabc.html">设置权限</a> </li>
-                <li> <a href="lyear_pages_add_doc.html">新增文档</a> </li>
-                <li> <a href="lyear_pages_guide.html">表单向导</a> </li>
-                <li> <a href="lyear_pages_login.html">登录页面</a> </li>
-                <li> <a href="lyear_pages_error.html">错误页面</a> </li>
-              </ul>
-            </li>
-            <li class="nav-item nav-item-has-subnav">
-              <a href="javascript:void(0)"><i class="mdi mdi-language-javascript"></i> JS 插件</a>
-              <ul class="nav nav-subnav">
-                <li> <a href="lyear_js_datepicker.html">日期选取器</a> </li>
-                <li> <a href="lyear_js_sliders.html">滑块</a> </li>
-                <li> <a href="lyear_js_colorpicker.html">选色器</a> </li>
-                <li> <a href="lyear_js_chartjs.html">Chart.js</a> </li>
-                <li> <a href="lyear_js_jconfirm.html">对话框</a> </li>
-                <li> <a href="lyear_js_tags_input.html">标签插件</a> </li>
-                <li> <a href="lyear_js_notify.html">通知消息</a> </li>
-              </ul>
-            </li>
-            <li class="nav-item nav-item-has-subnav">
-              <a href="javascript:void(0)"><i class="mdi mdi-menu"></i> 多级菜单</a>
-              <ul class="nav nav-subnav">
-                <li> <a href="#!">一级菜单</a> </li>
-                <li class="nav-item nav-item-has-subnav"> 
-                  <a href="#!">一级菜单</a>
-                  <ul class="nav nav-subnav">
-                    <li> <a href="#!">二级菜单</a> </li>
-                    <li class="nav-item nav-item-has-subnav"> 
-                      <a href="#!">二级菜单</a>
-                      <ul class="nav nav-subnav">
-                        <li> <a href="#!">三级菜单</a> </li>
-                        <li> <a href="#!">三级菜单</a> </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li> <a href="#!">一级菜单</a> </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-        
-        <div class="sidebar-footer">
-          <p class="copyright">Copyright &copy; 2019. <a target="_blank" href="http://lyear.itshubao.com">IT书包</a> All rights reserved.</p>
-        </div>
+
       </div>
       
     </aside>
@@ -130,7 +53,7 @@
           <ul class="topbar-right">
             <li class="dropdown dropdown-profile">
               <a href="javascript:void(0)" data-toggle="dropdown">
-                <img class="img-avatar img-avatar-48 m-r-10" src="images/users/avatar.jpg" alt="笔下光年" />
+                <img class="img-avatar img-avatar-48 m-r-10" th:src="@{/admin-new/dist/images/users/avatar.jpg}" alt="笔下光年" />
                 <span>笔下光年 <span class="caret"></span></span>
               </a>
               <ul class="dropdown-menu dropdown-menu-right">
@@ -138,7 +61,7 @@
                 <li> <a href="lyear_pages_edit_pwd.html"><i class="mdi mdi-lock-outline"></i> 修改密码</a> </li>
                 <li> <a href="javascript:void(0)"><i class="mdi mdi-delete"></i> 清空缓存</a></li>
                 <li class="divider"></li>
-                <li> <a href="lyear_pages_login.html"><i class="mdi mdi-logout-variant"></i> 退出登录</a> </li>
+                <li> <a href="login.html"><i class="mdi mdi-logout-variant"></i> 退出登录</a> </li>
               </ul>
             </li>
             <!--切换主题配色-->
@@ -286,8 +209,8 @@
             <div class="card bg-primary">
               <div class="card-body clearfix">
                 <div class="pull-right">
-                  <p class="h6 text-white m-t-0">今日收入</p>
-                  <p class="h3 text-white m-b-0">102,125.00</p>
+                  <p class="h6 text-white m-t-0">今日文章数</p>
+                  <p class="h3 text-white m-b-0" th:text="${blogCount}"></p>
                 </div>
                 <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-currency-cny fa-1-5x"></i></span> </div>
               </div>
@@ -298,8 +221,8 @@
             <div class="card bg-danger">
               <div class="card-body clearfix">
                 <div class="pull-right">
-                  <p class="h6 text-white m-t-0">用户总数</p>
-                  <p class="h3 text-white m-b-0">920,000</p>
+                  <p class="h6 text-white m-t-0">收到的评论数</p>
+                  <p class="h3 text-white m-b-0" th:text="${commentCount}"></p>
                 </div>
                 <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-account fa-1-5x"></i></span> </div>
               </div>
@@ -310,8 +233,8 @@
             <div class="card bg-success">
               <div class="card-body clearfix">
                 <div class="pull-right">
-                  <p class="h6 text-white m-t-0">下载总量</p>
-                  <p class="h3 text-white m-b-0">34,005,000</p>
+                  <p class="h6 text-white m-t-0">分类数量</p>
+                  <p class="h3 text-white m-b-0" th:text="${categoryCount}"></p>
                 </div>
                 <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-arrow-down-bold fa-1-5x"></i></span> </div>
               </div>
@@ -322,47 +245,20 @@
             <div class="card bg-purple">
               <div class="card-body clearfix">
                 <div class="pull-right">
-                  <p class="h6 text-white m-t-0">新增留言</p>
-                  <p class="h3 text-white m-b-0">153 条</p>
+                  <p class="h6 text-white m-t-0">标签总数</p>
+                  <p class="h3 text-white m-b-0" th:text="${tagCount}"> 条</p>
                 </div>
                 <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-comment-outline fa-1-5x"></i></span> </div>
               </div>
             </div>
           </div>
         </div>
-        
-        <div class="row">
-          
-          <div class="col-lg-6"> 
-            <div class="card">
-              <div class="card-header">
-                <h4>每周用户</h4>
-              </div>
-              <div class="card-body">
-                <canvas class="js-chartjs-bars"></canvas>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-6"> 
-            <div class="card">
-              <div class="card-header">
-                <h4>交易历史记录</h4>
-              </div>
-              <div class="card-body">
-                <canvas class="js-chartjs-lines"></canvas>
-              </div>
-            </div>
-          </div>
-           
-        </div>
-        
         <div class="row">
           
           <div class="col-lg-12">
             <div class="card">
               <div class="card-header">
-                <h4>项目信息</h4>
+                <h4>文章列表</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -490,13 +386,13 @@
   </div>
 </div>
 
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/perfect-scrollbar.min.js"></script>
-<script type="text/javascript" src="js/main.min.js"></script>
+<script type="text/javascript" th:src="@{/admin-new/dist/js/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/admin-new/dist/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/admin-new/dist/js/perfect-scrollbar.min.js}"></script>
+<script type="text/javascript" th:src="@{/admin-new/dist/js/main.min.js}"></script>
 
 <!--图表插件-->
-<script type="text/javascript" src="js/Chart.js"></script>
+<script type="text/javascript" th:src="@{/admin-new/dist/js/Chart.js}"></script>
 <script type="text/javascript">
 $(document).ready(function(e) {
     var $dashChartBarsCnt  = jQuery( '.js-chartjs-bars' )[0].getContext( '2d' ),

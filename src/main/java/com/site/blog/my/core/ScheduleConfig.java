@@ -14,7 +14,7 @@ import org.springframework.scheduling.config.ScheduledTaskRegistrar;
  * @date 2020/01/27 16:24
  */
 @Configuration
-@EnableScheduling
+//@EnableScheduling
 public class ScheduleConfig implements SchedulingConfigurer {
 
     @Override

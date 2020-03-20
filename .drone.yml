@@ -20,7 +20,7 @@ steps:
       from_secret: docker_user
     password: 
       from_secret: docker_pass
-    repo: huangxiaofenglogin/MyBlog
+    repo: registry.cn-shanghai.aliyuncs.com/hxf168482/hxf168482
     tags: latest
 
 

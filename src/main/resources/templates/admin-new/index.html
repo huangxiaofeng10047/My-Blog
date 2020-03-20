@@ -12,27 +12,14 @@
   <link th:href="@{/admin-new/dist/css/bootstrap.min.css}" rel="stylesheet">
   <link th:href="@{/admin-new/dist/css/materialdesignicons.min.css}" rel="stylesheet">
   <link th:href="@{/admin-new/dist/css/style.min.css}" rel="stylesheet">
+
 </head>
   
 <body>
 <div class="lyear-layout-web">
   <div class="lyear-layout-container">
     <!--左侧导航-->
-    <aside class="lyear-layout-sidebar">
-      
-      <!-- logo -->
-      <div id="logo" class="sidebar-header">
-        <a href="index.html"><img th:src="@{/admin-new/dist/images/logo-sidebar.png}" title="LightYear" alt="LightYear" /></a>
-      </div>
-      <div class="lyear-layout-sidebar-scroll">
-        <!-- 引入工具栏sidebar-fragment -->
-        <div th:replace="admin/sidebar::sidebar-fragment(${path})"></div>
-
-        
-
-      </div>
-      
-    </aside>
+    <div th:replace="sidebar::sidebar-fragment2"></div>
     <!--End 左侧导航-->
     
     <!--头部信息-->

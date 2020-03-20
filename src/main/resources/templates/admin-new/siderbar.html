@@ -1,113 +1,97 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<aside th:fragment="sidebar-fragment(path)" class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a th:href="@{/admin/index}" class="brand-link">
-        <img th:src="@{/admin/dist/img/logo.png}" alt="ssm-cluster Logo" class="brand-image img-circle elevation-3"
-             style="opacity: .8">
-        <span class="brand-text font-weight-light">my blog</span>
-    </a>
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-                <img th:src="@{/admin-new/dist/img/avatar5.png}" class="img-circle elevation-2" alt="User Image">
-            </div>
-            <div class="info">
-                <a href="#" class="d-block" th:text="${session.loginUser}"></a>
+    <!--左侧导航-->
+    <aside th:fragment="sidebar-fragment2" class="lyear-layout-sidebar">
+
+        <!-- logo -->
+        <div id="logo" class="header sidebar-header">
+            <a href="index.html"><img src="images/logo-sidebar.png" title="LightYear" alt="LightYear" /></a>
+        </div>
+        <div class="lyear-layout-sidebar-scroll">
+
+            <nav class="siderbar sidebar-main">
+                <ul class="nav nav-drawer">
+                    <li class="nav-item active"> <a href="index.html"><i class="mdi mdi-home"></i> 后台首页</a> </li>
+                    <li class="nav-item nav-item-has-subnav">
+                        <a href="javascript:void(0)"><i class="mdi mdi-palette"></i> UI 元素</a>
+                        <ul class="nav nav-subnav">
+                            <li> <a href="lyear_ui_buttons.html">按钮</a> </li>
+                            <li> <a href="lyear_ui_cards.html">卡片</a> </li>
+                            <li> <a href="lyear_ui_grid.html">格栅</a> </li>
+                            <li> <a href="lyear_ui_icons.html">图标</a> </li>
+                            <li> <a href="lyear_ui_tables.html">表格</a> </li>
+                            <li> <a href="lyear_ui_modals.html">模态框</a> </li>
+                            <li> <a href="lyear_ui_tooltips_popover.html">提示 / 弹出框</a> </li>
+                            <li> <a href="lyear_ui_alerts.html">警告框</a> </li>
+                            <li> <a href="lyear_ui_pagination.html">分页</a> </li>
+                            <li> <a href="lyear_ui_progress.html">进度条</a> </li>
+                            <li> <a href="lyear_ui_tabs.html">标签页</a> </li>
+                            <li> <a href="lyear_ui_typography.html">排版</a> </li>
+                            <li> <a href="lyear_ui_step.html">步骤</a> </li>
+                            <li> <a href="lyear_ui_other.html">其他</a> </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-item-has-subnav">
+                        <a href="javascript:void(0)"><i class="mdi mdi-format-align-justify"></i> 表单</a>
+                        <ul class="nav nav-subnav">
+                            <li> <a href="lyear_forms_elements.html">基本元素</a> </li>
+                            <li> <a href="lyear_forms_radio.html">单选框</a> </li>
+                            <li> <a href="lyear_forms_checkbox.html">复选框</a> </li>
+                            <li> <a href="lyear_forms_switch.html">开关</a> </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-item-has-subnav">
+                        <a href="javascript:void(0)"><i class="mdi mdi-file-outline"></i> 示例页面</a>
+                        <ul class="nav nav-subnav">
+                            <li> <a href="lyear_pages_doc.html">文档列表</a> </li>
+                            <li> <a href="lyear_pages_gallery.html">图库列表</a> </li>
+                            <li> <a href="lyear_pages_config.html">网站配置</a> </li>
+                            <li> <a href="lyear_pages_rabc.html">设置权限</a> </li>
+                            <li> <a href="lyear_pages_add_doc.html">新增文档</a> </li>
+                            <li> <a href="lyear_pages_guide.html">表单向导</a> </li>
+                            <li> <a href="lyear_pages_login.html">登录页面</a> </li>
+                            <li> <a href="lyear_pages_error.html">错误页面</a> </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-item-has-subnav">
+                        <a href="javascript:void(0)"><i class="mdi mdi-language-javascript"></i> JS 插件</a>
+                        <ul class="nav nav-subnav">
+                            <li> <a href="lyear_js_datepicker.html">日期选取器</a> </li>
+                            <li> <a href="lyear_js_sliders.html">滑块</a> </li>
+                            <li> <a href="lyear_js_colorpicker.html">选色器</a> </li>
+                            <li> <a href="lyear_js_chartjs.html">Chart.js</a> </li>
+                            <li> <a href="lyear_js_jconfirm.html">对话框</a> </li>
+                            <li> <a href="lyear_js_tags_input.html">标签插件</a> </li>
+                            <li> <a href="lyear_js_notify.html">通知消息</a> </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-item-has-subnav">
+                        <a href="javascript:void(0)"><i class="mdi mdi-menu"></i> 多级菜单</a>
+                        <ul class="nav nav-subnav">
+                            <li> <a href="#!">一级菜单</a> </li>
+                            <li class="nav-item nav-item-has-subnav">
+                                <a href="#!">一级菜单</a>
+                                <ul class="nav nav-subnav">
+                                    <li> <a href="#!">二级菜单</a> </li>
+                                    <li class="nav-item nav-item-has-subnav">
+                                        <a href="#!">二级菜单</a>
+                                        <ul class="nav nav-subnav">
+                                            <li> <a href="#!">三级菜单</a> </li>
+                                            <li> <a href="#!">三级菜单</a> </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li> <a href="#!">一级菜单</a> </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p class="copyright">Copyright &copy; 2019. <a target="_blank" href="http://lyear.itshubao.com">IT书包</a> All rights reserved.</p>
             </div>
         </div>
-        <!-- Sidebar Menu -->
-        <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                data-accordion="false">
-                <!-- Add icons to the links using the .nav-icon class
-                     with font-awesome or any other icon font library -->
-                <li class="nav-header">Dashboard</li>
-                <li class="nav-item">
-                    <a th:href="@{/admin-new/index}" th:class="${path}=='index'?'nav-link active':'nav-link'">
-                        <i class="nav-icon fa fa-dashboard"></i>
-                        <p>
-                            Dashboard
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a th:href="@{/admin-new/blogs/edit}" th:class="${path}=='edit'?'nav-link active':'nav-link'">
-                        <i class="nav-icon fa fa fa-pencil-square-o"></i>
-                        <p>
-                            发布博客
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-header">管理模块</li>
-                <li class="nav-item">
-                    <a th:href="@{/admin-new/blogs}" th:class="${path}=='blogs'?'nav-link active':'nav-link'">
-                        <i class="fa fa-list-alt nav-icon" aria-hidden="true"></i>
-                        <p>
-                            博客管理
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a th:href="@{/admin-new/comments}" th:class="${path}=='comments'?'nav-link active':'nav-link'">
-                        <i class="fa fa-comments nav-icon" aria-hidden="true"></i>
-                        <p>
-                            评论管理
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a th:href="@{/admin-new/categories}" th:class="${path}=='categories'?'nav-link active':'nav-link'">
-                        <i class="fa fa-bookmark nav-icon" aria-hidden="true"></i>
-                        <p>
-                            分类管理
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a th:href="@{/admin-new/tags}" th:class="${path}=='tags'?'nav-link active':'nav-link'">
-                        <i class="fa fa-tags nav-icon" aria-hidden="true"></i>
-                        <p>
-                            标签管理
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a th:href="@{/admin-new/links}" th:class="${path}=='links'?'nav-link active':'nav-link'">
-                        <i class="fa fa-heart nav-icon" aria-hidden="true"></i>
-                        <p>
-                            友情链接
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-header">系统管理</li>
-                <li class="nav-item">
-                    <a th:href="@{/admin/configurations}"
-                       th:class="${path}=='configurations'?'nav-link active':'nav-link'">
-                        <i class="fa fa-wrench nav-icon"></i>
-                        <p>系统配置</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a th:href="@{/admin/profile}"
-                       th:class="${path}=='profile'?'nav-link active':'nav-link'">
-                        <i class="fa fa-user-secret nav-icon"></i>
-                        <p>修改密码</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a th:href="@{/admin/logout}" class="nav-link">
-                        <i class="fa fa-sign-out nav-icon"></i>
-                        <p>安全退出</p>
-                    </a>
-                </li>
-                </li>
-            </ul>
-        </nav>
-        <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-</aside>
+
+    </aside>
 </html>

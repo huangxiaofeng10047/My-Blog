@@ -17,7 +17,14 @@
         <version>2.1.0.RELEASE</version>
         <relativePath/>
     </parent>
+   <repositories>
+       <repository>
+           <id>repo</id>
+           <name>centrol</name>
+           <url>http://maven.aliyun.com/nexus/content/repositories/central/</url>
 
+       </repository>
+   </repositories>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
